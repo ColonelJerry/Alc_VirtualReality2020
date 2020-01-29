@@ -10,6 +10,8 @@ public class TempCamera : MonoBehaviour
     private float yaw = 0f;
     private float pitch = 0f;
 
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +22,10 @@ public class TempCamera : MonoBehaviour
     void Update()
     {
         yaw += speedH * Input.GetAxis("Mouse X");
-        pitch += speedV * Input.GetAxis("Mouse Y");
+        pitch -= speedV * Input.GetAxis("Mouse Y");
 
-        transform.eulerAngles = new Vector3(pitch, yaw, -0f);
+        transform.eulerAngles = new Vector3(pitch, yaw, 0f);
+
+        transform.position = player.transform.position;
     }
 }
