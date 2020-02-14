@@ -26,6 +26,6 @@ public class TempCamera : MonoBehaviour
 
         transform.eulerAngles = new Vector3(pitch, yaw, 0f);
 
-        transform.position = player.transform.position;
+        //transform.position = player.transform.position;
     }
 }
